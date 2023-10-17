@@ -50,7 +50,3 @@ def scrape_movie(url)
     year: year
   }
 end
-
-# # urls = fetch_movie_urls
-url = "https://www.imdb.com/title/tt0111161"
-scrape_movie(url)
