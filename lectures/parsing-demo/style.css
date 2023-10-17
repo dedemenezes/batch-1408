@@ -1,0 +1,7 @@
+p {
+  color: red
+}
+
+.card.student-green p {
+  color: green;
+}
