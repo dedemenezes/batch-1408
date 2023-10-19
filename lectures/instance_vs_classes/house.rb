@@ -6,7 +6,7 @@ require_relative 'building'
 class House < Building
 end
 
-# # new INSTANCE of House class
+# new INSTANCE of House class
 # my_house = House.new('My home', 20, 30)
 # your_house = House.new('Your house', 40, 50)
 # p my_house.name

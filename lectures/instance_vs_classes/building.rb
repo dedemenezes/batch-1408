@@ -1,3 +1,5 @@
+# CLASSES are factories. We define what they are (STATE[instance_variables])
+# and what they DO (BEHAVIOUR[methods])
 class Building
   # STATES/ATTRIBUTES
   # width

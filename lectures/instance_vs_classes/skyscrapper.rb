@@ -1,4 +1,7 @@
 require_relative './building'
+
+# CLASSES are factories. We define what they are (STATE[instance_variables])
+# and what they DO (BEHAVIOUR[methods])
 class Skyscrapper < Building
   # change the Initialize
   attr_reader :number_of_floors

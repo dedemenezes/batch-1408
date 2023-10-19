@@ -1,5 +1,8 @@
 require_relative 'building'
 require_relative 'butler'
+
+# CLASSES are factories. We define what they are (STATE[instance_variables])
+# and what they DO (BEHAVIOUR[methods])
 class Castle < Building
   attr_reader :butler
 
@@ -7,7 +10,6 @@ class Castle < Building
     super(name, width, length)
     @butler = Butler.new(self) #=> an INSTANCE of Butler class
   end
-  # only the castle has a moat
 
   # CLASS METHODS
   # def self.method_name
@@ -19,12 +21,16 @@ class Castle < Building
     ["Medieval", "Norman", "Ancient"]
   end
 
+  # only the Castle has a moat
   attr_accessor :moat
   # def moat=(value)
   #   @moat = value
   # end
 
   # INSTANCE METHODS
+  # def method_name
+  # end
+
   def has_a_moat?
     @moat != nil
   end
