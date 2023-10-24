@@ -2,3 +2,4 @@ id,username,password,role
 1,fabio,secret,manager
 2,rose,secret,manager
 3,jack,secret,rider
+4,andre,secret,rider

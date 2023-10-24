@@ -1,12 +1,13 @@
-class MealView
+# frozen_string_literal: true
 
+class MealView
   def ask_for_name
-    puts "Name? "
+    puts 'Name? '
     gets.chomp
   end
 
   def ask_for_price
-    puts "Price? "
+    puts 'Price? '
     gets.chomp.to_i
   end
 

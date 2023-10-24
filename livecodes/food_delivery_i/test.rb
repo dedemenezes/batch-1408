@@ -1,8 +1,13 @@
-require_relative 'app/models/employee'
-require_relative 'app/repositories/employee_repository'
+# frozen_string_literal: true
 
-rider_one = Employee.new(id: 1, username: 'Jack', password: 'secret', role: 'rider')
-# p rider_one
+# require_relative 'app/models/employee'
+# require_relative 'app/repositories/employee_repository'
+
+# Employee.new(id: 1, username: 'Jack', password: 'secret', role: 'rider')
+# # p rider_one
+
+# EmployeeRepository.new('./data/employees.csv')
 
 
-employee_repository = EmployeeRepository.new('./data/employees.csv')
+require_relative 'app/models/order'
+p Order.new

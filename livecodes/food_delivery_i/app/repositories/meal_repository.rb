@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'csv'
 
 class MealRepository
@@ -25,7 +27,7 @@ class MealRepository
 
   def save_csv
     CSV.open(@csv_file, 'wb') do |csv|
-      csv << ["id", "name", "price"]
+      csv << %w[id name price]
       @meals.each do |meal|
         csv << [meal.id, meal.name, meal.price]
       end

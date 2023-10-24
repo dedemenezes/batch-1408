@@ -1,12 +1,13 @@
-class CustomerView
+# frozen_string_literal: true
 
+class CustomerView
   def ask_for_name
-    puts "Name ?"
+    puts 'Name ?'
     gets.chomp
   end
 
   def ask_for_address
-    puts "Address? "
+    puts 'Address? '
     gets.chomp
   end
 

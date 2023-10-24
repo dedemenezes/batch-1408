@@ -1,5 +1,9 @@
+# frozen_string_literal: true
+
 class Employee
   attr_reader :username, :password
+  attr_accessor :id
+
   # STATE/ATTRIBUTES
   # id       => intenger
   # username => String
@@ -12,7 +16,15 @@ class Employee
     @role     = attributes[:role]
   end
 
+  def role
+    @role
+  end
+
   def manager?
     @role == 'manager'
+  end
+
+  def rider?
+    @role == 'rider'
   end
 end

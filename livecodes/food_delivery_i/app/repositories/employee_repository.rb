@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'csv'
 require_relative '../models/employee'
 
@@ -5,7 +7,20 @@ class EmployeeRepository
   def initialize(csv_file_path)
     @csv_file_path = csv_file_path
     @employees = []
-    load_csv
+    load_csv if File.exist?(csv_file_path)
+  end
+
+  def all_riders
+    # RETURN AN ARRAY OF EMPLOYEES THAT ARE RIDERS!
+    @employees.select do |employee|
+      employee.rider?
+    end
+  end
+
+  def find(employee_id)
+    @employees.find do |employee|
+      employee.id == employee_id
+    end
   end
 
   def find_by_username(username)
@@ -30,6 +45,6 @@ class EmployeeRepository
       # 3. Populate the employees array
       @employees << employee
     end
-    p @employees
+    # p @employees
   end
 end

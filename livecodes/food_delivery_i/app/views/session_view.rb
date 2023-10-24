@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SessionView
   def ask_for(anything)
     puts "#{anything}?"

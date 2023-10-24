@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'csv'
 
 class CustomerRepository
@@ -25,7 +27,7 @@ class CustomerRepository
 
   def save_csv
     CSV.open(@csv_file, 'wb') do |csv|
-      csv << ["id", "name", "address"]
+      csv << %w[id name address]
       @customers.each do |customer|
         csv << [customer.id, customer.name, customer.address]
       end

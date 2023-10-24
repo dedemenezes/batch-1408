@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../views/session_view'
 
 class SessionsController
@@ -5,7 +7,6 @@ class SessionsController
     @employee_repository = employee_repository
     @session_view = SessionView.new
   end
-
 
   def login
     # 1. ask for the username
@@ -16,9 +17,9 @@ class SessionsController
     employee = @employee_repository.find_by_username(username)
     # 3.2 check if we found an employee AND if the password is the same as employee.password
     if employee && employee.password == password
-        # login the user and print a nice welcome message
-        @session_view.welcome(employee)
-        employee
+      # login the user and print a nice welcome message
+      @session_view.welcome(employee)
+      employee
     else
       # ask for passsword and username again
       # RECURSION!
