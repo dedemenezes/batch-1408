@@ -41,6 +41,7 @@ class OrderRepository
   end
 
   def mark_as_delivered(order)
+    # retrieve the right order based on the index
     # 3. mark as delivered
     order.deliver!
     # 4. save it to the csv

@@ -22,9 +22,9 @@ class OrdersController
     # 1.1 DISPLAY ALL MEALS
     @meal_view.display_meals(meals)
     # 1. Ask for which meal to add
-    meal_id = @order_view.ask_for('ID').to_i
+    meal_index = @order_view.ask_for('INDEX').to_i - 1
     # 2. Retrieve the right meal
-    meal = @meal_repository.find(meal_id)
+    meal = meals[meal_index]
     p meal
 
     # 1.0 GET ALL customers
@@ -32,9 +32,9 @@ class OrdersController
     # 1.1 DISPLAY ALL customers
     @customer_view.display_customers(customers)
     # 1. Ask for which customer to add
-    customer_id = @order_view.ask_for('ID').to_i
+    customer_index = @order_view.ask_for('INDEX').to_i - 1
     # 2. Retrieve the right customer
-    customer = @customer_repository.find(customer_id)
+    customer = customers[customer_index]
     p customer
 
     # 1.0 GET ALL THE RIDERS
@@ -42,9 +42,9 @@ class OrdersController
     # 1.1 DISPLAY ALL RIDERS/EMPLOYEES
     @employee_view.display_employees(riders)
     # 1. Ask for which rider to add
-    employee_id = @order_view.ask_for('ID').to_i
+    employee_index = @order_view.ask_for('INDEX').to_i - 1
     # 2. Retrieve the right rider
-    rider = @employee_repository.find(employee_id)
+    rider = riders[employee_index]
     p rider
     # 7. Instantiate a new ORDER
     new_order = Order.new(meal: meal, customer: customer, employee: rider)
@@ -53,11 +53,15 @@ class OrdersController
   end
 
   def mark_as_delivered(user)
-    list_my_orders(user)
+    # 0. retrieve all undelivered orders for the given user
+    my_orders = @order_repository.my_undelivered_orders(user)
+    # 0.1 display all the undelivered orders
+    @order_view.display_orders(my_orders)
     # 2. ask which one to mark as delivered
-    order_id = @order_view.ask_for('ID').to_i
+    order_index = @order_view.ask_for('INDEX').to_i - 1
     # 3.1 retrieve the right order
-    order = @order_repository.find(order_id)
+    order = my_orders[order_index]
+    # 4. tell the repo to mark and save the order as delivered
     @order_repository.mark_as_delivered(order)
   end
 
