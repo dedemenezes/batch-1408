@@ -1,0 +1,30 @@
+.white-box {
+  background-color: rgb(255, 255, 255);
+  width: 400px;
+}
+
+.card-image {
+  width: 400px;
+  height: 300px;
+}
+
+.profile-picture {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+
+}
+
+ul {
+  text-align: right;
+}
+
+li {
+  display: inline-block;
+
+}
