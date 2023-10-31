@@ -1,0 +1,13 @@
+.icon--red {
+  color: red;
+}
+
+.icon--yellow {
+  color: rgb(220, 220, 14);
+}
+
+.icon__position {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}

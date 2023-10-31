@@ -1,0 +1,10 @@
+.btn-purple {
+  background-color: purple;
+  color: white;
+  padding: 8px 0;
+  display: inline-block;
+  font-weight: bold;
+  border-radius: 4px;
+  width: 100%;
+  text-align: center;
+}
