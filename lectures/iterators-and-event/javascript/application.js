@@ -100,6 +100,7 @@ const btn = document.querySelector('.btn.btn-light')
 
 // 2. add our event listener
 btn.addEventListener('click', (event) => {
+  console.log(event.currentTarget);
   // 3. manipulate the checkboxes
   checkboxes.forEach((checkbox) => {
     // way to see if the checkbox is MARKED/CHECKED
