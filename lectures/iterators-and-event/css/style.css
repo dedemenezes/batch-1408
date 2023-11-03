@@ -17,9 +17,22 @@ h1, h2, h3 {
 }
 
 .red {
-  color: red;
+  color: rgb(204, 56, 61);
 }
 
 .green {
-  color: green;
+  color: rgb(26, 71, 42);
+}
+
+.blue {
+  color: #222F5B;
+}
+
+.yellow {
+  color: #FFDB00;
+}
+
+.img-circle {
+  border-radius: 50%;
+  transition: .2s
 }
