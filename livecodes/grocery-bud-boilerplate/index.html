@@ -17,17 +17,17 @@
       }
     </script>
   </head>
-  
+
   <body class="bg-secondary bg-opacity-10">
     <div class="container">
-      <div class="col-4 offset-4 my-5 bg-white py-4 rounded shadow">
+      <div class="col-8 offset-2 my-5 bg-white py-4 rounded shadow" data-controller="list">
         <div class="row">
           <h1 class="text-center mb-4">Grocery bud</h1>
-          <form class="row align-items-center mb-3">
+          <form class="row align-items-center mb-3" data-action="submit->list#add">
             <div class="col-9 offset-1">
-              <input type="text" class="form-control" placeholder="egs...">
+              <input type="text" class="form-control" placeholder="egs..." data-list-target="input">
             </div>
-            
+
             <div class="col-1 d-flex justify-content-center">
               <button type="submit" class="btn btn-primary">Add</button>
             </div>
@@ -35,12 +35,13 @@
         </div>
         <div class="row">
           <div class="col-8 offset-1">
-            <ul class="list-group list-group-flush"></ul>
+            <ul class="list-group list-group-flush" data-list-target="submit">
+            </ul>
           </div>
         </div>
       </div>
     </div>
-    
+
     <script src="lib/index.js" type="module"></script>
   </body>
 </html>
